@@ -1,0 +1,16 @@
+{% load staticfiles %}
+{% if galaxyName %}
+
+    <div>
+       <h2>Galaxy {{ galaxyName }}</h2>
+    </div>
+	<img height="300" width="400" src="{{ STATIC_URL }}{{ u_img }}" />
+	<img height="300" width="400" src="{{ STATIC_URL }}{{ g_img }}" />
+	<img height="300" width="400" src="{{ STATIC_URL }}{{ r_img }}" />
+	<img height="300" width="400" src="{{ STATIC_URL }}{{ i_img }}" />
+	<img height="300" width="400" src="{{ STATIC_URL }}{{ z_img }}" />
+
+<h2>Morphometry</h2>
+{% else %}
+    <p>No galaxies are available.</p>
+{% endif %}

@@ -1,0 +1,168 @@
+<link rel="stylesheet" href="{{ STATIC_URL}}/mainStyle.css">
+<<<<<<< HEAD
+<div class="bodyfull">
+	<div class="teste">R-EFIGI <span>Redshifted EFIGI Catalogue</span></div>
+	<div class="bigbody">
+	<div class="hspace"></div>
+{% if galaxy %}
+	<div class="galaxyName">{{galaxy.name}}</div>
+	<div class="hspace"></div>
+	<div class="imagebox">
+		<img src="{{ STATIC_URL}}{{ galaxy.colorImgUrl }}"> </img>
+		<span> Color Image </span>
+	</div>
+	<div class="imagebox">
+		<img src="{{ STATIC_URL}}{{ u_img }}"> </img>
+		<span> u band </span>
+	</div>
+	<div class="imagebox">
+		<img src="{{ STATIC_URL}}{{ g_img }}"> </img>
+		<span> g band </span>
+	</div>
+	<div class="imagebox">
+		<img src="{{ STATIC_URL}}{{ r_img }}"> </img>
+		<span> r band </span>
+	</div>
+	<div class="imagebox">
+		<img src="{{ STATIC_URL}}{{ i_img }}"> </img>
+		<span> i band </span>
+	</div>
+	<div class="imagebox">
+		<img src="{{ STATIC_URL}}{{ z_img }}"> </img>
+		<span> z band </span>
+	</div>
+	{% if imggif %}
+	<div class="imagebox">
+		<img src="{{ STATIC_URL}}{{ imggif }}"> </img>
+		<span> Redshifit Gif </span>
+	</div>
+	{% endif %}
+    <div style='clear:both'></div>
+    <div class="hspace"></div>
+     <div class="hspace"></div>
+  
+
+<div class="galaxyName">Morfometryka</div>
+
+<img class="mfmtkImg" src="{{ STATIC_URL}}{{ mfmtk_out }}"> </img>
+
+<div class="hspace"></div>
+{% if redshiftImages %}
+<div class="galaxyName">Simulation Steps</div>
+<div class="hspace"></div>
+{% for image in redshiftImages %}
+	<div class="imagebox">
+		<img src="{{ STATIC_URL}}{{redshiftPath}}{{ image }}"> </img>
+		
+	</div>
+{% endfor %}
+{% endif %}
+<div style='clear:both'></div>
+<div class="hspace"></div>
+{% if A1_img %}
+	<div class="galaxyName">Structural Parameters vs. Redshift</div>
+
+	<div class="parameterGraph"><img src="{{ STATIC_URL}}{{ A1_img }}"> </img></div>
+	<div class="parameterGraph"><img src="{{ STATIC_URL}}{{ A3_img }}"> </img></div>
+	<div class="parameterGraph"><img src="{{ STATIC_URL}}{{ S1_img }}"> </img></div>
+
+	<div class="parameterGraph"><img src="{{ STATIC_URL}}{{ S3_img }}"> </img></div>
+
+	<div class="parameterGraph"><img src="{{ STATIC_URL}}{{ C1_img }}"> </img></div>
+
+	<div class="parameterGraph"><img src="{{ STATIC_URL}}{{ C2_img }}"> </img></div>
+{% endif %}
+
+	<div class="hspace"></div>
+	<div class="galaxyName">Morphometric Parameters vs. Sampling</div>
+	<div class="hspace"></div><div class="hspace"></div>
+	{% for image in resolutionImages %}
+		<div class="parametersMosaic"><img src="{{ STATIC_URL}}{{ image }}"> </img></div>
+		<div style='clear:both'></div>
+	{% endfor %}
+	<div class="hspace"></div>
+	<div class="hspace"></div>
+
+{% endif %}
+
+	{% for image in mfmtk_pngs %}
+		<div><img class="mfmtkImg" src="{{ STATIC_URL}}{{ image }}"> </img></div>
+	{% endfor %}
+<div style='clear:both'></div>
+
+	</div>
+	<div style='clear:both'></div>
+</div>
+=======
+
+<div class="teste">R-EFIGI <span>Redshifted EFIGI Catalogue</span></div>
+
+{% load staticfiles %}
+{% if galaxyName %}
+
+    <div>
+       <h2>Multiband Imaging</h2>
+    </div>
+    <div class="bandImage"> 
+	    <span> u-band </span>
+		<img height="300" width="400" src="{{ STATIC_URL }}{{ u_img }}" />
+	</div>
+	<img height="300" width="400" src="{{ STATIC_URL }}{{ g_img }}" />
+	<img height="300" width="400" src="{{ STATIC_URL }}{{ r_img }}" />
+	<img height="300" width="400" src="{{ STATIC_URL }}{{ i_img }}" />
+	<img height="300" width="400" src="{{ STATIC_URL }}{{ z_img }}" />
+
+<h2>Morphometry</h2>
+<img src="{{ STATIC_URL}}{{ mfmtk_out }}"> </img>
+<li> Mo = {{ Mo }} </li>
+<li> No = {{ No }} </li>
+<li> psffwhm = {{ psffwhm }} </li>
+<li> asecpix = {{ asecpix }} </li>
+<li> skybg = {{ skybg }} </li>
+<li> skybgstd = {{ skybgstd }} </li>
+<li> x0peak = {{ x0peak }} </li>
+<li> y0peak = {{ y0peak }} </li>
+<li> x0col = {{ x0col }} </li>
+<li> y0col = {{ y0col }} </li>
+<li> x0A1fit = {{ x0A1fit }} </li>
+<li> y0A1fit = {{ y0A1fit }} </li>
+<li> x0A3fit = {{ x0A3fit }} </li>
+<li> y0A3fit = {{ y0A3fit }} </li>
+<li> a = {{ a }} </li>
+<li> b = {{ b }} </li>
+<li> PAdeg = {{ PAdeg }} </li>
+<li> InFit1D = {{ InFit1D }} </li>
+<li> RnFit1D = {{ RnFit1D }} </li>
+<li> nFit1D = {{ nFit1D }} </li>
+<li> xsin = {{ xsin }} </li>
+<li> x0Fit2D = {{ x0Fit2D }} </li>
+<li> y0Fit2D = {{ y0Fit2D }} </li>
+<li> InFit2D = {{ InFit2D }} </li>
+<li> RnFit2D = {{ RnFit2D }} </li>
+<li> nFit2D = {{ nFit2D }} </li>
+<li> qFit2D = {{ qFit2D }} </li>
+<li> PAFit2D = {{ PAFit2D }} </li>
+<li> Rp = {{ Rp }} </li>
+<li> C1 = {{ C1 }} </li>
+<li> C2 = {{ C2 }} </li>
+<li> R20 = {{ R20 }} </li>
+<li> R50 = {{ R50 }} </li>
+<li> R80 = {{ R80 }} </li>
+<li> R90 = {{ R90 }} </li>
+<li> A1 = {{ A1 }} </li>
+<li> A2 = {{ A2 }} </li>
+<li> A3 = {{ A3 }} </li>
+<li> A4 = {{ A4 }} </li>
+<li> S1 = {{ S1 }} </li>
+<li> S3 = {{ S3 }} </li>
+<li> G = {{ G }} </li>
+<li> M20 = {{ M20 }} </li>
+<li> psi = {{ psi }} </li>
+<li> sigma_psi = {{ sigma_psi }} </li>
+<li> H = {{ H }} </li>
+<li> QF = {{ QF }} </li>
+
+{% else %}
+    <p>No galaxies are available.</p>
+{% endif %}
+>>>>>>> 1f39f57a11adb7b38e50bc2e4a0c0feb1ff1eb6f

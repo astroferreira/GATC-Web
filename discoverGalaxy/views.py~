@@ -1,0 +1,34 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.template import RequestContext, loader
+import os 
+import numpy as np
+
+files = sorted(os.listdir('/data/output/img/original/ima_g/'))
+
+rootname50,Mo,No,psffwhm,asecpix,skybg,skybgstd,x0peak,y0peak,x0col,y0col,x0A1fit,y0A1fit,x0A3fit,y0A3fit,a,b,PAdeg,InFit1D,RnFit1D,nFit1D,xsin,x0Fit2D,y0Fit2D,InFit2D,RnFit2D,nFit2D,qFit2D,PAFit2D,Rp,C1,C2,R20,R50,R80,R90,A1,A2,A3,A4,S1,S3,G,M20,psi,sigma_psi,H,QF,error  = np.loadtxt('/data/data.MFMTK', dtype=str, delimiter=',').T
+
+pathImg = "img/output/img/original/"
+
+def index(request):
+	return HttpResponse("Hello, world. You'rle at the polls index.")
+
+def detail(request, pgc_id):
+	galaxyName = "PGC" + str(pgc_id)
+	index = np.where(rootname50 == (galaxyName + "_g"))
+	gal = rootname50[index]
+	#for f in files:
+	#	f.split('_')[0]
+	template = loader.get_template('discoverGalaxy/detail.html')
+	context = RequestContext(request, {
+		'galaxyName': galaxyName,
+		'galaxyId': pgc_id,
+		'u_img': pathImg + 'ima_u/' + galaxyName + '.png',
+		'g_img': pathImg + 'ima_g/' + galaxyName + '.png',
+		'r_img': pathImg + 'ima_r/' + galaxyName + '.png',
+		'i_img': pathImg + 'ima_i/' + galaxyName + '.png',
+		'z_img': pathImg + 'ima_z/' + galaxyName + '.png',
+		'gal': gal
+	})
+	return HttpResponse(template.render(context))
+

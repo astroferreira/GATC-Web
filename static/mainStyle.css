@@ -1,0 +1,119 @@
+<<<<<<< HEAD
+.galaxyName {
+	font-size: 25px;
+	margin: 5px;
+	font-weight: bold;
+}
+
+.mfmtkImg {
+	width: 1000px;
+	height: 600px;
+}
+
+.parameterGraph {
+	height: 400px;
+	width: 500px;
+	float: left;
+}
+
+
+.parametersMosaic {
+	float:left;
+
+}
+
+.parametersMosaic img {
+	width: 1000px;
+	height: 300px;
+
+}
+
+.parameterGraph img {
+	height: 400px;
+	width: 500px;
+}
+
+.imagebox {
+	width: 150px;
+	height: 150px;
+	float: left;
+	margin-right: 30px;
+	text-align: center;
+}
+
+.imagebox img {
+	width: 150px;
+}
+
+.imagebox span {
+	margin-top: 5px;
+}
+
+.hspace {
+
+	width: 1500px;
+	height: 30px;
+}
+
+=======
+>>>>>>> 1f39f57a11adb7b38e50bc2e4a0c0feb1ff1eb6f
+.teste {
+	font-size: 50px;
+	height: 70px;
+	border-width: 16px;
+	border-bottom: solid;
+	vertical-align: center;
+	float: left;
+	margin: 0 auto;
+	width: 1500px;
+}
+
+.bodyfull {
+	width: 1500px;
+	margin: 0 auto;
+
+}
+
+.teste span {
+	font-size: 25px;
+}
+
+.bigbody{
+	width: 1500px;
+	float:left;
+	margin: 0 auto;
+	padding-left: 40px;
+}
+
+.galaxyBox {
+	text-align: center;
+	float: left;
+	width: 200px;
+	height: 200px;
+	border: solid;
+	border-width: 1px;
+	border-color: white;
+}
+.galaxyBox:hover {
+	border: solid;
+	border-color: blue;
+	border-width: 1px;
+	width: 200px;
+	height: 200px;
+	float: left;
+
+}
+
+a .galaxyBox span {
+	text-decoration: None;
+	color: black;
+	font-size: 20px;
+	padding-top: 20px;
+
+}
+
+.galaxyBox img {
+	height: 200px;
+	width: 200px;
+
+}
