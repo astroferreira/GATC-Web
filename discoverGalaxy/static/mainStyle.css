@@ -1,27 +1,8 @@
+<<<<<<< HEAD
 .galaxyName {
 	font-size: 25px;
 	margin: 5px;
 	font-weight: bold;
-}
-
-.menu {
-	float:left;
-	border-bottom: 1px solid;
-	width: 500px;
-}
-
-.searchRegion {
-	float: right;
-	width: 420px;
-	margin: 0 auto;
-	
-}
-
-.searchBar{
-	float: left;
-	width: 1100px;
-	margin: 0 auto;
-	border-bottom: 3px solid;
 }
 
 .mfmtkImg {
@@ -74,7 +55,9 @@
 	height: 30px;
 }
 
-.headline {
+=======
+>>>>>>> 1f39f57a11adb7b38e50bc2e4a0c0feb1ff1eb6f
+.teste {
 	font-size: 50px;
 	height: 70px;
 	border-width: 16px;
@@ -82,11 +65,11 @@
 	vertical-align: center;
 	float: left;
 	margin: 0 auto;
-	width: 1100px;
+	width: 1500px;
 }
 
 .bodyfull {
-	width: 1100px;
+	width: 1500px;
 	margin: 0 auto;
 
 }
@@ -96,7 +79,7 @@
 }
 
 .bigbody{
-	width: 1100px;
+	width: 1500px;
 	float:left;
 	margin: 0 auto;
 	padding-left: 40px;

@@ -4,11 +4,12 @@ from django.template import RequestContext, loader
 from discoverGalaxy.models import Galaxy
 import os 
 import numpy as np
-<<<<<<< HEAD
 import matplotlib.pyplot as plt
 import pyfits
 import matplotlib as mpl
 
+
+"""
 files = sorted(os.listdir('/data/mysample/original/ima_g/'))
 
 
@@ -32,7 +33,6 @@ font2 = {'family' : 'serif',
         'weight' : 'normal',
         'size'   : 5,
         }
-=======
 
 files = sorted(os.listdir('/data/output/img/original/ima_g/'))
 
@@ -40,33 +40,38 @@ rootname50,Mo,No,psffwhm,asecpix,skybg,skybgstd,x0peak,y0peak,x0col,y0col,x0A1fi
 
 pathImg = "img/output/original/site/color/"
 pathMfmtk = "img/output/mfmtk_img/"
->>>>>>> 1f39f57a11adb7b38e50bc2e4a0c0feb1ff1eb6f
 
+"""
 def index(request):
 	template = loader.get_template('discoverGalaxy/index.html')
-	galaxies = []
-<<<<<<< HEAD
+	
+	arquivos = np.loadtxt('/data/output/site/galaxylist', dtype=str)[0:100]
+	"""
+	
 	names = np.loadtxt('/data/output/site/galaxylist', dtype=str)
 	for f in names:
 		galaxyName = f
 		galaxyId = galaxyName.split('PGC')[1]
 		colorUrl = pathImg + 'color/' + galaxyName + '.png'
-=======
-	arquivos = files[0:500]
+	"""
+	galaxies = []
+	#arquivos = files[0:100]
+	pathImg = "img/output/site/color/"
 	for f in arquivos:
 		galaxyName = f.split('.')[0]
 		galaxyId = galaxyName.split('PGC')[1]
 		colorUrl = pathImg  + galaxyName + '.png'
->>>>>>> 1f39f57a11adb7b38e50bc2e4a0c0feb1ff1eb6f
 		Gal = Galaxy(galId=galaxyId, name=galaxyName, colorImgUrl=colorUrl)
 		galaxies.append(Gal)
-
+	
 	context = RequestContext(request, {
 		'galaxyList': galaxies
 		})
 	return HttpResponse(template.render(context))
 
-<<<<<<< HEAD
+#def home(request):
+
+
 def sampleStats(request):
 	template = loader.get_template('discoverGalaxy/sample.html')
 	context = RequestContext(request, {
@@ -75,13 +80,12 @@ def sampleStats(request):
 	return HttpResponse(template.render(context))
 
 
-=======
->>>>>>> 1f39f57a11adb7b38e50bc2e4a0c0feb1ff1eb6f
+
+"""
 def detail(request, pgc_id):
 	galaxyName = "PGC" + str(pgc_id)
 	index = np.where(rootname50 == (galaxyName + "_g"))
 	gal = rootname50[index][0]
-<<<<<<< HEAD
 	colorUrl = pathImg + 'color/' + galaxyName + '.png'
 	galaxy = Galaxy(galId=pgc_id, name=galaxyName, colorImgUrl=colorUrl)
 	#for f in files:
@@ -206,7 +210,7 @@ def detail(request, pgc_id):
 		'redshiftImages': redshiftImages,
 		'mfmtk_pngs' : mfmtk_pngs,
 		'resolutionImages' : resolutionImages
-=======
+
 	#for f in files:
 	#	f.split('_')[0]
 	template = loader.get_template('discoverGalaxy/detail.html')
@@ -267,7 +271,7 @@ def detail(request, pgc_id):
 		'H' : H[index][0],
 		'QF' : QF[index][0],
 		'mfmtk_out' : pathMfmtk + galaxyName + '_i_mfmtk.png'
->>>>>>> 1f39f57a11adb7b38e50bc2e4a0c0feb1ff1eb6f
 	})
 	return HttpResponse(template.render(context))
 
+"""

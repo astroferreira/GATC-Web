@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
+PROJECT_DIR=os.path.dirname(__file__)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -54,7 +54,8 @@ ROOT_URLCONF = 'refigi.urls'
 
 # Absolute path to the directory static files should be collected to.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = "/data/refigi/	static"
+STATIC_ROOT= os.path.join(PROJECT_DIR,'static/')
+STATICFILES_DIRS = (os.path.join(PROJECT_DIR,'static/'),)
 
 # URL that handles the static files served from STATIC_ROOT.
 # Example: "http://example.com/static/", "http://static.example.com/"

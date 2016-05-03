@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-
-from django.conf.urls import include, url
-from django.contrib import admin
+from discoverGalaxy import views
 
 urlpatterns = [
+	url(r'^$', views.index, name='index'),
     url(r'^discoverGalaxy/', include('discoverGalaxy.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^sampleStats/$', views.sampleStats, name='sampleStats'),
 ]
